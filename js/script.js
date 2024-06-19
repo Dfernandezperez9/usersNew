@@ -42,16 +42,18 @@ function fetchData (URL) {
             const template = `<p><span class='plantilla'>Nombre: </span>${copiaDeData[i].name}.</p><p><span class='plantilla'>Edad: </span>${edad}.</p><p><span class='plantilla'>Username: </span>${copiaDeData[i].username}.</p><p><span class='plantilla'>telefono: </span>${copiaDeData[i].phone}.</p><p><span class='plantilla'>Email: </span>${copiaDeData[i].email}.</p>`
             const template2 = `<p><span class='plantilla'>Compania: </span>${copiaDeData[i].company.name}.</p><p><span class='plantilla'>Direccion: </span>${copiaDeData[i].address.street}, ${copiaDeData[i].address.suite}, ${copiaDeData[i].address.city}.</p>`
             const imagen = document.createElement("img")
-            imagen.src = "assets\img\1.jpeg"
+            imagen.classList.add("imagen")
+            imagen.src = `./assets/img/${copiaDeData[i].id}.jpeg`
             contenedorSecundario.innerHTML = template
             contenedorTerciario.innerHTML = template2
-            contenedorImagen.innerHTML = imagen
+            
             
 
             UELE.appendChild(newElemento)
             newElemento.appendChild(contenedorPrincipal);
             contenedorPrincipal.appendChild(contenedorSecundario);
             contenedorPrincipal.appendChild(contenedorImagen)
+            contenedorImagen.appendChild(imagen)
             contenedorPrincipal.appendChild(contenedorTerciario)
             
            
